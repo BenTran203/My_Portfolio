@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import './Projects.css';
+import image1 from "../../assets/Project_1.png";
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -15,19 +16,19 @@ const Projects = () => {
       title: t('project1.title'),
       description: t('project1.description'),
       tools: t('project1.tools'),
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop',
+      image: image1,
+      projectLink: 'https://e-commerce-liard-rho-36.vercel.app/',
+      githubLink: 'https://github.com/BenTran203/E_commerce'
+    },
+    {
+      id: 2,
+      title: t('project2.title'),
+      description: t('project2.description'),
+      tools: t('project2.tools'),
+      image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&h=400&fit=crop',
       projectLink: '#',
       githubLink: '#'
-    }
-    // {
-    //   id: 2,
-    //   title: t('project2.title'),
-    //   description: t('project2.description'),
-    //   tools: t('project2.tools'),
-    //   image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&h=400&fit=crop',
-    //   projectLink: '#',
-    //   githubLink: '#'
-    // },
+    },
     // {
     //   id: 3,
     //   title: t('project3.title'),

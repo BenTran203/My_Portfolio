@@ -37,16 +37,15 @@ const resources = {
       
       // Sample Projects
       "project1.title": "Timeless E-commerce",
-      "project1.description": "Building a modern fashion e-commerce app with Next.js 14 (App Router) and a Node.js/Express API. Users can browse and search products, save wishlists, check out with Stripe, and track orders. Admins get a role-gated dashboard to manage catalog, view sales trends, and monitor favorites. The stack emphasizes strong typing (TypeScript), schema-validated forms (Zod), and a robust data layer with PostgreSQL + Prisma.",
-      "project1.tools": "Frontend: Next.js 14, TypeScript, TailwindCSS, Redux Toolkit, React Query, Axios, React Hook Form, Zod, Framer Motion, Lucide React | Backend: Node.js, Express, PostgreSQL, Prisma ORM, JWT, bcrypt, Stripe, OpenAI APIs, AWS S3, Nodemailer, Joi",
+      "project1.description": "Architected a full-stack, containerized (Docker) e-commerce platform using Next.js 16 and Node.js. It delivers a rich user experience with Stripe payments, a persistent Redux cart, and multi-language support. The backend leverages PostgreSQL, Prisma, and Redis for a robust and cached data layer, secured by JWT. A comprehensive admin dashboard enables management of products, users, and sales analytics.",
+      "project1.tools": "Frontend: Next.js 16 (React 19), TypeScript, Tailwind CSS, Redux Toolkit, React Hook Form, Framer Motion, Stripe React SDK, Lucide React\n\nBackend: Node.js, Express, PostgreSQL, Prisma, Redis, JWT, bcrypt, Stripe API, Express Validator\n\nDevOps: Docker, Docker Compose",   
+      // "project2.title": "Task Management App",
+      // "project2.description": "Collaborative task management application with real-time updates, team workspaces, and deadline tracking. Includes Kanban board and calendar views.",
+      // "project2.tools": "React, Firebase, Material-UI, Socket.io",
       
-      "project2.title": "Task Management App",
-      "project2.description": "Collaborative task management application with real-time updates, team workspaces, and deadline tracking. Includes Kanban board and calendar views.",
-      "project2.tools": "React, Firebase, Material-UI, Socket.io",
-      
-      "project3.title": "Weather Dashboard",
-      "project3.description": "Real-time weather application with location-based forecasts, interactive maps, and weather alerts. Displays hourly and 7-day forecasts.",
-      "project3.tools": "React, OpenWeather API, Chart.js, Leaflet",
+      // "project3.title": "Weather Dashboard",
+      // "project3.description": "Real-time weather application with location-based forecasts, interactive maps, and weather alerts. Displays hourly and 7-day forecasts.",
+      // "project3.tools": "React, OpenWeather API, Chart.js, Leaflet",
       
       // Contact Section
       "contact.title": "Get In Touch",
@@ -103,7 +102,7 @@ const resources = {
       // Sample Projects
       "project1.title": "Timeless E-commerce",
       "project1.description": "Đang xây dựng ứng dụng thương mại điện tử thời trang hiện đại với Next.js 14 (App Router) và API Node.js/Express. Người dùng có thể duyệt và tìm kiếm sản phẩm, lưu danh sách yêu thích, thanh toán qua Stripe, và theo dõi đơn hàng. Quản trị viên có bảng điều khiển với phân quyền để quản lý danh mục, xem xu hướng bán hàng, và giám sát mục yêu thích. Stack nhấn mạnh vào strong typing (TypeScript), form được xác thực schema (Zod), và lớp dữ liệu mạnh mẽ với PostgreSQL + Prisma.",
-      "project1.tools": "Frontend: Next.js 14, TypeScript, TailwindCSS, Redux Toolkit, React Query, Axios, React Hook Form, Zod, Framer Motion, Lucide React | Backend: Node.js, Express, PostgreSQL, Prisma ORM, JWT, bcrypt, Stripe, OpenAI APIs, AWS S3, Nodemailer, Joi",
+      "project1.tools": "Frontend: Next.js 14, TypeScript, TailwindCSS, Redux Toolkit, React Query, Axios, React Hook Form, Zod, Framer Motion, Lucide React\n\nBackend: Node.js, Express, PostgreSQL, Prisma ORM, JWT, bcrypt, Stripe, OpenAI APIs, AWS S3, Nodemailer, Joi",
       
       "project2.title": "Ứng dụng Quản lý Công việc",
       "project2.description": "Ứng dụng quản lý công việc cộng tác với cập nhật theo thời gian thực, không gian làm việc nhóm và theo dõi thời hạn. Bao gồm bảng Kanban và lịch.",
