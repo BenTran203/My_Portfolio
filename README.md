@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# Ben Tran - Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website built with React and Vite, featuring a nature-themed glassmorphism design with smooth animations.
+
+## Features
+
+- **Nature-Themed Glassmorphism Design** — Emerald/green color palette with glass-effect surfaces and dynamic gradients
+- **Dark Mode Support** — Toggle between light and dark themes with persistent preference
+- **Multi-language Support** — English and Vietnamese translations using i18next
+- **Smooth Scrolling** — Custom smooth scroll implementation for seamless navigation
+- **Command Palette** — Quick navigation with `Ctrl+K` / `⌘K` keyboard shortcut
+- **Responsive Design** — Optimized for desktop, tablet, and mobile devices
+- **Animated Sections** — Framer Motion powered animations and transitions
+- **Contact Form** — Integrated with GetForm.io and reCAPTCHA protection
+
+## Tech Stack
+
+- **Framework:** React 19
+- **Build Tool:** Vite 6
+- **Styling:** Tailwind CSS 3.4
+- **Animations:** Framer Motion
+- **Internationalization:** react-i18next
+- **Icons:** React Icons
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   cd portfolio
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Available Scripts
 
-In the project directory, you can run:
+### `npm run dev`
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode with hot module replacement.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `dist` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run preview`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Previews the production build locally.
 
-### `npm run eject`
+## Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+src/
+├── assets/          # Images and static assets
+├── components/      # React components
+│   ├── About/       # About section with tabbed content
+│   ├── CommandPalette/  # Keyboard-accessible command palette
+│   ├── Contact/     # Contact form and info
+│   ├── Footer/      # Footer component
+│   ├── Hero/        # Hero section with avatar
+│   ├── Nav_bar/     # Navigation with dark mode toggle
+│   ├── Projects/    # Project cards grid
+│   └── Skills/      # Skills section
+├── utils/           # Utility functions
+├── App.jsx          # Main app component
+├── main.jsx         # Entry point
+└── index.css        # Global styles and Tailwind utilities
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Customization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Colors
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The color scheme can be customized in `tailwind.config.js`. The default uses the emerald/green palette:
 
-## Learn More
+```js
+colors: {
+  brand: {
+    50: '#f0fdf4',
+    // ... more shades
+    900: '#14532d',
+  },
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Translations
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Language files are located in `i18n.js`. Add or modify translations for English (`en`) and Vietnamese (`vi`).
 
-### Code Splitting
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Build the project and deploy the `dist` folder to any static hosting service:
 
-### Analyzing the Bundle Size
+- Vercel
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+MIT License - feel free to use this project as a template for your own portfolio.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Author
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**PhucDat Tran (Ben Tran)**  
+- LinkedIn: [linkedin.com/in/bentran-ph](https://www.linkedin.com/in/bentran-ph)
+- Email: bentranph@gmail.com

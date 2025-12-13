@@ -7,6 +7,8 @@ const resources = {
       // Navigation
       "nav.home": "Home",
       "nav.projects": "Projects",
+      "nav.skills": "Skills",
+      "nav.about": "About",
       "nav.contact": "Contact",
       "nav.language": "Language",
       
@@ -71,6 +73,8 @@ const resources = {
       // Navigation
       "nav.home": "Trang chủ",
       "nav.projects": "Dự án",
+      "nav.skills": "Kỹ năng",
+      "nav.about": "Giới thiệu",
       "nav.contact": "Liên hệ",
       "nav.language": "Ngôn ngữ",
       
