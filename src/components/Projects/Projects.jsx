@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard.jsx';
 import image1 from "../../assets/Project_1.png";
+import image2 from "../../assets/Project_2.png";
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -22,9 +23,9 @@ const Projects = () => {
       title: t('project2.title'),
       description: t('project2.description'),
       tools: t('project2.tools'),
-      image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&h=400&fit=crop',
-      projectLink: '#',
-      githubLink: '#'
+      image: image2,
+      projectLink: 'https://chatapp-bens-projects-7dd2f3e4.vercel.app',
+      githubLink: 'https://github.com/BenTran203/Multi-Tenant-SaaS-Dashboard'
     },
   ];
 
