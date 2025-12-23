@@ -24,7 +24,7 @@ const Projects = () => {
       description: t('project2.description'),
       tools: t('project2.tools'),
       image: image2,
-      projectLink: 'https://chatapp-bens-projects-7dd2f3e4.vercel.app',
+      projectLink: 'https://www.chatwave.space',
       githubLink: 'https://github.com/BenTran203/Multi-Tenant-SaaS-Dashboard'
     },
   ];

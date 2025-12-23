@@ -66,7 +66,7 @@ const resources = {
       "contact.form.error": "Please fill in all fields.",
       
       // Footer
-      "footer.text": "© 2024 All rights reserved. Built with 💚 using React"
+      "footer.text": "© 2024 All rights reserved. Built with using React"
     }
   },
   vi: {
