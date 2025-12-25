@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard.jsx';
 import image1 from "../../assets/Project_1.png";
 import image2 from "../../assets/Project_2.png";
+import image3 from "../../assets/Dashboard.png";
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -26,6 +27,15 @@ const Projects = () => {
       image: image2,
       projectLink: 'https://www.chatwave.space',
       githubLink: 'https://github.com/BenTran203/Multi-Tenant-SaaS-Dashboard'
+    },
+    {
+      id: 3,
+      title: t('project3.title'),
+      description: t('project3.description'),
+      tools: t('project3.tools'),
+      image: image3,
+      projectLink: 'https://ai-dashboard-analytics-dun.vercel.app',
+      githubLink: 'https://github.com/BenTran203/AI_Dashboard-analytics'
     },
   ];
 
