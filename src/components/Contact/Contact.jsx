@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { FaPhone, FaLinkedin, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
@@ -14,19 +14,6 @@ const Contact = () => {
   const [status, setStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [lastSubmitTime, setLastSubmitTime] = useState(0);
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -51,32 +38,27 @@ const Contact = () => {
       return;
     }
 
-    const recaptchaResponse = window.grecaptcha?.getResponse();
-    if (!recaptchaResponse) {
-      setStatus('captcha-error');
-      setTimeout(() => setStatus(''), 3000);
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('message', formData.message);
-      formDataToSend.append('g-recaptcha-response', recaptchaResponse);
-
-      const response = await fetch('https://getform.io/f/bwnyopja', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        body: formDataToSend,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
         setLastSubmitTime(now);
-        window.grecaptcha?.reset();
         setTimeout(() => setStatus(''), 5000);
       } else {
         setStatus('error');
@@ -222,14 +204,6 @@ const Contact = () => {
                 />
               </div>
 
-              <div className="flex justify-center my-2">
-                <div 
-                  className="g-recaptcha" 
-                  data-sitekey="6LfiYe8rAAAAAHAA5WblX5jV5DvDRRLRDi_kjzzo"
-                  data-theme="light"
-                ></div>
-              </div>
-
               {status === 'success' && (
                 <div className="p-4 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border-2 border-emerald-500 text-center font-medium">
                   {t('contact.form.success')}
@@ -250,15 +224,14 @@ const Contact = () => {
 
               {status === 'rate-limit' && (
                 <div className="p-4 rounded-2xl bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 border-2 border-red-500 text-center font-medium">
-                  Please wait 30 seconds before submitting another message
+                  Please wait 30 seconds before submitting again
                 </div>
               )}
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="cta-primary flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
-                disabled={isSubmitting}
-              >
+                disabled={isSubmitting}>
                 <FaPaperPlane />
                 <span>{isSubmitting ? 'Sending...' : t('contact.form.send')}</span>
               </button>
