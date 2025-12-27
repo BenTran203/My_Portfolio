@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGraduationCap, FaBriefcase, FaUser, FaFileDownload, FaCertificate } from 'react-icons/fa';
+import { FaGraduationCap, FaBriefcase, FaUser, FaFileDownload, FaCertificate, FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import avatarImage from '../../assets/Avatar.png';
 import javascriptCert from '../../assets/javascript_certificate.jpg';
 import nodeCert from '../../assets/Node_certificate.jpg';
+import sadMouseImage from '../../assets/Sad mouse.jpg';
+import sadMouseAudio from '../../assets/Sad_mouse.mp3';
 
 const Introduction = () => {
   const { t, i18n } = useTranslation();
   const [activeTab, setActiveTab] = useState(0);
-  const tabs = ['about', 'experience', 'education'];
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const audioRef = useRef(null);
+  const tabs = ['experience', 'education', 'please'];
 
   // Auto-rotate tabs every 20 seconds
   useEffect(() => {
@@ -22,6 +27,28 @@ const Introduction = () => {
 
   const handleTabClick = (index) => {
     setActiveTab(index);
+  };
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const toggleMute = () => {
+    if (audioRef.current) {
+      audioRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const handleAudioEnd = () => {
+    setIsPlaying(false);
   };
 
   // Certificate data
@@ -107,7 +134,7 @@ const Introduction = () => {
               }`}
               onClick={() => handleTabClick(0)}
             >
-              <FaUser /> {t('intro.tabs.about')}
+              <FaBriefcase /> {t('intro.tabs.experience')}
             </button>
             <button
               className={`flex items-center gap-2 px-6 py-3 bg-gray-50 text-gray-600 border-2 border-transparent rounded-xl text-base font-semibold cursor-pointer transition-all duration-300 font-sans hover:bg-brand-50 hover:text-brand-500 hover:border-brand-200 ${
@@ -115,7 +142,7 @@ const Introduction = () => {
               }`}
               onClick={() => handleTabClick(1)}
             >
-              <FaBriefcase /> {t('intro.tabs.experience')}
+              <FaGraduationCap /> {t('intro.tabs.education')}
             </button>
             <button
               className={`flex items-center gap-2 px-6 py-3 bg-gray-50 text-gray-600 border-2 border-transparent rounded-xl text-base font-semibold cursor-pointer transition-all duration-300 font-sans hover:bg-brand-50 hover:text-brand-500 hover:border-brand-200 ${
@@ -123,31 +150,13 @@ const Introduction = () => {
               }`}
               onClick={() => handleTabClick(2)}
             >
-              <FaGraduationCap /> {t('intro.tabs.education')}
+              <FaUser /> {t('intro.tabs.please')}
             </button>
           </div>
 
           <div className="relative">
             <AnimatePresence mode="wait">
               {activeTab === 0 && (
-                <motion.div
-                  key="about"
-                  variants={contentVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{ duration: 0.3 }}
-                  className="p-8 bg-gray-50 rounded-[15px] min-h-[450px]"
-                >
-                  <div className="w-[70px] h-[70px] bg-gradient-to-br from-brand-500 to-brand-600 rounded-[15px] flex items-center justify-center text-white text-3xl mb-5">
-                    <FaUser />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl text-brand-800 mb-4 font-bold">{t('intro.about.title')}</h3>
-                  <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line text-left">{t('intro.about.description')}</p>
-                </motion.div>
-              )}
-
-              {activeTab === 1 && (
                 <motion.div
                   key="experience"
                   variants={contentVariants}
@@ -166,7 +175,7 @@ const Introduction = () => {
                 </motion.div>
               )}
 
-              {activeTab === 2 && (
+              {activeTab === 1 && (
                 <motion.div
                   key="education"
                   variants={contentVariants}
@@ -182,7 +191,7 @@ const Introduction = () => {
                   <h3 className="text-2xl md:text-3xl text-brand-800 mb-4 font-bold">{t('intro.education.title')}</h3>
                   <h4 className="text-brand-500 text-2xl font-bold mb-4">{t('intro.education.degree')}</h4>
                   <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line text-left mb-8">{t('intro.education.university')}</p>
-
+                  
                   <div className="mt-8 pt-8 border-t-2 border-gray-200">
                     <div className="flex items-center gap-3 mb-5 text-brand-800 text-xl">
                       <FaCertificate />
@@ -204,6 +213,70 @@ const Introduction = () => {
                       ))}
                     </div>
                     <p className="text-sm text-gray-400 text-center italic m-0">{t('intro.certificates.clickToView')}</p>
+                  </div>
+                </motion.div>
+              )}
+
+              {activeTab === 2 && (
+                <motion.div
+                  key="please"
+                  variants={contentVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.3 }}
+                  className="p-8 bg-gray-50 rounded-[15px] min-h-[450px]"
+                >
+                  {/* Hidden audio element */}
+                  <audio 
+                    ref={audioRef} 
+                    src={sadMouseAudio} 
+                    onEnded={handleAudioEnd}
+                    preload="auto"
+                  />
+                  
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <h3 className="text-2xl md:text-3xl text-brand-800 mb-6 font-bold">
+                      Hire me, Please 🥺
+                    </h3>
+                    
+                    <motion.div 
+                      className={`relative cursor-pointer mb-6 ${isPlaying ? 'animate-pulse' : ''}`}
+                      onClick={togglePlay}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <div className="relative">
+                        <img 
+                          src={sadMouseImage} 
+                          alt="Sad Mouse Meme" 
+                          className={`w-56 h-56 md:w-72 md:h-72 object-contain rounded-3xl shadow-2xl transition-all duration-300 ${isPlaying ? 'ring-4 ring-brand-400 ring-opacity-75' : ''}`}
+                        />
+                        {/* Play/Pause overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-300">
+                          <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                            {isPlaying ? (
+                              <FaPause className="text-2xl text-brand-600" />
+                            ) : (
+                              <FaPlay className="text-2xl text-brand-600 ml-1" />
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Sound waves animation when playing */}
+                      {isPlaying && (
+                        <motion.div 
+                          className="absolute -inset-4 rounded-3xl border-4 border-brand-400/50"
+                          animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.2, 0.5] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        />
+                      )}
+                    </motion.div>
+                    
+                    <p className="text-gray-500 text-sm italic">
+                      Click the mouse to hear the cry 😢
+                    </p>
                   </div>
                 </motion.div>
               )}

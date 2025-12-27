@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaFileDownload, FaArrowDown } from 'react-icons/fa';
+import { FaFileDownload, FaArrowDown, FaGithub, FaLinkedin } from 'react-icons/fa';
 import avatarImage from '../../assets/Avatar.png';
 import { smoothScrollTo } from '../../utils/smoothScroll';
 
@@ -11,10 +11,6 @@ const Hero = () => {
   const handleResumeClick = () => {
     const resumeFile = i18n.language === 'vi' ? 'resume-vi.pdf' : 'resume-en.pdf';
     window.open(`/${resumeFile}`, '_blank');
-  };
-
-  const scrollToProjects = () => {
-    smoothScrollTo('projects', 120);
   };
 
   return (
@@ -60,7 +56,7 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-white/90 mb-8 body-text drop-shadow-md"
+              className="text-2xl md:text-3xl text-white/90 mb-8 body-text drop-shadow-md"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -74,13 +70,24 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <button
-                onClick={scrollToProjects}
+              <a
+                href="https://github.com/BenTran203"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="cta-primary flex items-center justify-center gap-2"
               >
-                <span>View Work</span>
-                <FaArrowDown className="animate-bounce" />
-              </button>
+                <FaGithub className="text-xl" />
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/bentran-ph/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-primary flex items-center justify-center gap-2"
+              >
+                <FaLinkedin className="text-xl" />
+                <span>LinkedIn</span>
+              </a>
               <button
                 onClick={handleResumeClick}
                 className="cta-secondary flex items-center justify-center gap-2"
@@ -98,8 +105,8 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="glass rounded-3xl p-8 shadow-2xl shadow-black/30 max-w-md">
-              <p className="text-gray-700 dark:text-neutral-200 text-lg body-text">
+            <div className="glass rounded-3xl p-8 shadow-2xl shadow-black/30 max-w-lg">
+              <p className="text-gray-700 dark:text-neutral-200 text-xl body-text leading-relaxed">
                 {t('intro.about.description')}
               </p>
             </div>
