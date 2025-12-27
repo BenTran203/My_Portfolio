@@ -19,7 +19,7 @@ const resources = {
       "intro.tabs.experience": "Experience",
       "intro.tabs.education": "Education & Certificates",
       "intro.tabs.please": "Pleaseee",
-      "intro.about.title": "MEMEMEM",
+      "intro.about.title": "More of Me",
       "intro.about.description":
         "I'm Ben, a backend-leaning full-stack dev based in Viet Nam who values clarity, ownership, and steady iteration. I like building straightforward, fast web experiences and collaborating with kind, detail-oriented people. When I log off, you'll catch me going to the Gym, Gaming and learning new technologies.",
       "intro.experience.title": "Experience",

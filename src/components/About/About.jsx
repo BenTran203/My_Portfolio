@@ -84,7 +84,7 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-neutral-100 mb-4 heading">
-            Please
+            More of me
           </h2>
         </motion.div>
 
