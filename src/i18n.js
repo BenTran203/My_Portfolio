@@ -21,9 +21,9 @@ const resources = {
       "intro.tabs.please": "Pleaseee",
       "intro.about.title": "More of Me",
       "intro.about.description":
-        "I'm Ben, a backend-leaning full-stack dev based in Viet Nam who values clarity, ownership, and steady iteration. I like building straightforward, fast web experiences and collaborating with kind, detail-oriented people. When I log off, you'll catch me going to the Gym, Gaming and learning new technologies.",
+        "I'm PhucDat (or Ben), a backend-leaning full-stack dev based in Viet Nam who values clarity, simplicity, and steady iteration. I like building straightforward, fast web experiences and collaborating with kind, great-minded experienced people. When I log off, you'll catch me going to the Gym, Gaming and learning new technologies.",
       "intro.experience.title": "Experience",
-      "intro.experience.years": "1+ Year Professional Experience",
+      "intro.experience.years": "1 Year Professional Experience",
       "intro.experience.description":
         "🏢 LEAD INNOVATIONZ — Backend Intern (Feb–Jun 2025)\n• Built & maintained microservices architecture using RabbitMQ/MQTT for messaging\n• Implemented Redis caching for improved performance and session management\n• Dockerized services for consistent environments and smoother deployments\n• Co-designed Bookme.com booking flows (search → availability → payment)\n• Analyzed Odoo ERP workflows for business process optimization\n• Developed AI chatbot integrations and automated AI workflows\n\n🏢 Chameleon — Software Engineer Intern (Oct 2023–Mar 2024)\n• Converted Figma designs into responsive React components\n• Built lightweight design system for consistent UI/UX\n• Implemented JWT authentication with secure refresh tokens\n• Optimized frontend performance (bundle size reduction, lazy loading)\n• Improved backend efficiency (query optimization, caching strategies)\n\n🛠️ Tech Stack: Node.js, TypeScript, Express, React, Next.js, Docker, RabbitMQ, MQTT, Redis, REST APIs, SQL/NoSQL, Odoo, AI Integration, Git",
       "intro.education.title": "Education",
@@ -96,9 +96,9 @@ const resources = {
       "intro.tabs.please": "Please",
       "intro.about.title": "Giới thiệu",
       "intro.about.description":
-        "Mình là Ben, một dev full-stack thiên về backend, hiện đang sinh sống tại Việt Nam, coi trọng sự rõ ràng, tinh thần sở hữu và nhịp cải tiến đều đặn. Mình thích xây những trải nghiệm web đơn giản, nhanh và dễ dùng, và thích cộng tác với mọi người, chú trọng chi tiết. Khi tắt máy, bạn thường sẽ thấy mình đi gym, chơi game và khám phá các công nghệ mới.",
+        "Mình là Phúc Đạt (hay Ben), một dev full-stack thiên về backend, hiện đang sinh sống tại Việt Nam, coi trọng sự rõ ràng, tinh thần có trạch nhiệm và kinh nghiệm dày dặn. Mình thích xây những trải nghiệm web đơn giản, nhanh và dễ dùng, và thích cộng tác với mọi người, chú trọng chi tiết. Khi offline, bạn thường sẽ thấy mình đi gym, chơi game và khám phá các công nghệ mới.",
       "intro.experience.title": "Kinh nghiệm",
-      "intro.experience.years": "Hơn 1 Năm Kinh Nghiệm Chuyên Nghiệp",
+      "intro.experience.years": "1 Năm Kinh Nghiệm Chuyên Nghiệp",
       "intro.experience.description":
         "🏢 LEAD INNOVATIONZ — Thực tập Backend (02/2025 – 06/2025)\n• Xây dựng & bảo trì kiến trúc microservices với RabbitMQ/MQTT\n• Triển khai Redis caching để tăng hiệu suất và quản lý session\n• Docker hóa dịch vụ để đồng nhất môi trường\n• Thiết kế luồng đặt chỗ cho Bookme.com (tìm kiếm → khả dụng → thanh toán)\n• Phân tích quy trình Odoo ERP để tối ưu hóa nghiệp vụ\n• Phát triển tích hợp AI chatbot và tự động hóa workflow AI\n\n🏢 Chameleon — Thực tập Kỹ sư (10/2023 – 03/2024)\n• Chuyển Figma thành component React responsive\n• Xây dựng design system nhẹ cho UI/UX đồng nhất\n• Triển khai xác thực JWT với refresh token an toàn\n• Tối ưu hiệu năng Frontend (giảm bundle, lazy loading)\n• Cải thiện Backend (tối ưu truy vấn, chiến lược caching)\n\n🛠️ Tech Stack: Node.js, TypeScript, Express, React, Next.js, Docker, RabbitMQ, MQTT, Redis, REST APIs, SQL/NoSQL, Odoo, tích hợp AI, Git",
       "intro.education.title": "Học vấn",

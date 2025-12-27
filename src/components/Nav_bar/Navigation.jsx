@@ -44,8 +44,7 @@ const Navigation = () => {
       <div className="glass rounded-3xl px-6 py-4 shadow-xl shadow-black/20">
         <div className="max-w-[1400px] mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3 text-xl md:text-2xl font-bold text-emerald-700 dark:text-emerald-400 transition-colors">
-            <span className="text-2xl md:text-3xl">💚</span>
-            <span className="tracking-tight">Portfolio</span>
+            <span className="tracking-tight">PhucDat Tran</span>
           </div>
 
           <button 
