@@ -12,6 +12,7 @@ import {
   FaVolumeMute,
 } from "react-icons/fa";
 import javascriptCert from "../../assets/javascript_certificate.jpg";
+import AWS from "../../assets/AWS.png";
 import nodeCert from "../../assets/Node_certificate.jpg";
 import sadMouseImage from "../../assets/Sad mouse.jpg";
 import sadMouseAudio from "../../assets/Sad_mouse.mp3";
@@ -21,6 +22,7 @@ const About = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState(null);
   const audioRef = useRef(null);
   const tabs = ["experience", "education", "please"];
 
@@ -32,13 +34,6 @@ const About = () => {
         audioRef.current.play();
       }
       setIsPlaying(!isPlaying);
-    }
-  };
-
-  const toggleMute = () => {
-    if (audioRef.current) {
-      audioRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
     }
   };
 
@@ -57,11 +52,41 @@ const About = () => {
       name: "Backend Development Certificate",
       image: nodeCert,
     },
+    {
+      id: 3,
+      name: "AWS Certificate",
+      image: AWS,
+    },
+
   ];
 
   const handleCertificateClick = (certImage) => {
-    window.open(certImage, "_blank");
+    setZoomedImage(certImage);
   };
+
+  const closeZoom = () => {
+    setZoomedImage(null);
+  };
+
+  // Handle ESC key to close zoom
+  React.useEffect(() => {
+    const handleEscKey = (e) => {
+      if (e.key === "Escape" && zoomedImage) {
+        closeZoom();
+      }
+    };
+
+    if (zoomedImage) {
+      document.addEventListener("keydown", handleEscKey);
+      // Prevent scrolling when zoom is open
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscKey);
+      document.body.style.overflow = "unset";
+    };
+  }, [zoomedImage]);
 
   const contentVariants = {
     enter: { x: 50, opacity: 0 },
@@ -74,6 +99,41 @@ const About = () => {
       className="relative py-24 md:py-32 px-6 md:px-8 bg-white dark:bg-neutral-900"
       id="about"
     >
+      {/* Image Zoom Modal */}
+      <AnimatePresence>
+        {zoomedImage && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeZoom}
+          >
+            <motion.div
+              className="relative max-w-5xl max-h-[90vh] w-full"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closeZoom}
+                className="absolute -top-12 right-0 text-white hover:text-emerald-400 transition-colors text-sm font-semibold"
+                aria-label="Close zoom"
+              >
+                Press ESC or click outside to close
+              </button>
+              <img
+                src={zoomedImage}
+                alt="Zoomed certificate"
+                className="w-full h-full object-contain rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="max-w-[1400px] mx-auto">
         {/* Section Header */}
         <motion.div

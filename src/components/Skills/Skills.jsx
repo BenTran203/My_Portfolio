@@ -18,7 +18,7 @@ const Skills = () => {
     {
       name: 'Backend',
       icon: FaServer,
-      skills: ['Node.js', 'Express', 'REST APIs', 'Microservices', 'GraphQL'],
+      skills: ['Node.js', 'Express', 'REST APIs', 'Microservices', 'RabbitMQ', 'MQTT', 'Odoo', 'JWT'],
       color: 'green'
     },
     {
@@ -30,19 +30,19 @@ const Skills = () => {
     {
       name: 'Databases',
       icon: FaDatabase,
-      skills: ['PostgreSQL', 'MongoDB', 'Redis'],
+      skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Firebase', 'AWS'],
       color: 'emerald'
     },
     {
       name: 'DevOps',
       icon: FaDocker,
-      skills: ['Docker', 'Docker Compose', 'CI/CD', 'AWS'],
+      skills: ['Docker', 'Docker Compose', 'CI/CD'],
       color: 'green'
     },
     {
       name: 'Tools',
       icon: FaGitAlt,
-      skills: ['Git', 'RabbitMQ', 'MQTT', 'Odoo', 'JWT'],
+      skills: ['Github','Gitlens', 'Microsoft Planner', 'Trello', 'Atlassian'],
       color: 'lime'
     },
   ];
